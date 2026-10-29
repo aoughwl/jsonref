@@ -1,5 +1,5 @@
 import std/[syncio, assertions]
-import "../src/aowljson"
+import "../src/jsonref"
 
 proc rt(s: string): string =
   var err = ""
@@ -46,7 +46,7 @@ assert e2.len > 0
 # unicode escape decode
 assert rt("\"\\u0041\\u00e9\"") == "\"Aé\""
 
-echo "aowljson: OK"
+echo "jsonref: OK"
 
 # --- absence is nil, and every accessor tolerates nil -----------------------
 # The bug this pins: `{}` used to hand back a fresh JNull for a key that is NOT

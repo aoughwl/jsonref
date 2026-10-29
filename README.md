@@ -1,6 +1,6 @@
-# aowljson — a small, self-contained JSON value type for Nimony
+# jsonref — a small, self-contained JSON value type for Nimony
 
-`aowljson` is a plain, ergonomic JSON library for **Nimony**: a reference
+`jsonref` is a plain, ergonomic JSON library for **Nimony**: a reference
 `JsonValue` tree with a recursive-descent parser, a compact serializer, safe
 nested access, and value builders. No dependencies beyond Nimony's `std/strutils`.
 
@@ -8,7 +8,7 @@ nested access, and value builders. No dependencies beyond Nimony's `std/strutils
 
 Nimony ships a NIF-backed `std/json`, but its document is **move-only** and only
 exposes **root-level** key lookup — awkward to thread through an ordinary API
-where you want `req{"params"}{"name"}.getStr("")`. `aowljson` owns a normal
+where you want `req{"params"}{"name"}.getStr("")`. `jsonref` owns a normal
 `ref` value tree instead, so JSON reads and builds the way you'd expect.
 
 In keeping with the aoughwl stack: **errors are values, never exceptions.**
@@ -19,8 +19,8 @@ In keeping with the aoughwl stack: **errors are values, never exceptions.**
 Requires the Nimony compiler (`~/nimony/bin/nimony`). No external dependency.
 
 ```sh
-git clone https://github.com/aoughwl/aowljson
-cd aowljson
+git clone https://github.com/aoughwl/jsonref
+cd jsonref
 ./build.sh            # runs tests/tjson.nim
 ```
 
@@ -29,7 +29,7 @@ Point elsewhere with `NIMONY=/path/to/nimony ./build.sh`.
 ## Use it
 
 ```nim
-import aowljson
+import jsonref
 
 var err = ""
 let v = parseJson("""{"user":{"name":"ada"},"tags":["x","y"]}""", err)
@@ -64,7 +64,7 @@ keep insertion order.
 ## Layout
 
 ```
-src/aowljson.nim     the library (import this)
+src/jsonref.nim     the library (import this)
 tests/tjson.nim      round-trip, nested access, builders, unicode-escape tests
 ```
 

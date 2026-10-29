@@ -1,4 +1,4 @@
-## aowljson — a small, self-contained JSON value type for Nimony.
+## jsonref — a small, self-contained JSON value type for Nimony.
 ##
 ## Nimony ships a NIF-backed `std/json`, but its document is move-only and only
 ## exposes root-level key lookup, which is awkward to thread through most APIs.
