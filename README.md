@@ -1,3 +1,5 @@
+> **Moved.** This library now lives in [aoughwl/std](https://github.com/aoughwl/std/tree/main/jsonref) (directory `jsonref/`), with its full history. This repository is kept as a redirect; new work happens in `aoughwl/std`.
+
 # jsonref — a small, self-contained JSON value type for Nimony
 
 `jsonref` is a plain, ergonomic JSON library for **Nimony**: a reference
